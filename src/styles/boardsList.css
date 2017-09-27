@@ -1,0 +1,45 @@
+.BoardsList .heading {
+
+}
+
+ul.boards-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li.boards-list-item {
+  flex: 0 25%;
+  margin-bottom: 10px;
+}
+
+a.board-tile {
+  text-decoration: none;
+  display: block;
+  height: 100px;
+  margin: 0 8px;
+  padding: 10px;
+  background-color: #0079bf;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+a.board-tile:hover {
+  background-color: #05649c;
+}
+
+.add-new-board a.board-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e2e4e6;
+  color: #838c91;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.add-new-board a.board-tile:hover {
+  background-color: #d4d5d5;
+}

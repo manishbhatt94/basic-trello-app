@@ -18,8 +18,8 @@ class AppContent extends Component {
       <div className="AppContent">
         {
           selectedBoardId ?
-          <BoardsList /> :
-          <BoardView boardId={selectedBoardId} />
+          <BoardView boardId={selectedBoardId} /> :
+          <BoardsList />
         }
       </div>
     );
