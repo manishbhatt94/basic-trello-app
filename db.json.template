@@ -1,0 +1,61 @@
+{
+  "boards": [
+    {
+      "id": "1",
+      "name": "Welcome Board"
+    },
+    {
+      "id": "2",
+      "name": "Release Notes"
+    }
+  ],
+  "lists": [
+    {
+      "id": "1",
+      "name": "List 1 Board 1",
+      "boardId": "1"
+    },
+    {
+      "id": "2",
+      "name": "List 2 Board 1",
+      "boardId": "1"
+    },
+    {
+      "id": "3",
+      "name": "Change Log",
+      "boardId": "2"
+    }
+  ],
+  "cards": [
+    {
+      "id": "1",
+      "text": "Read about DOM Events",
+      "listId": "1"
+    },
+    {
+      "id": "2",
+      "text": "Learn Node.JS",
+      "listId": "1"
+    },
+    {
+      "id": "3",
+      "text": "Buy milk from the store.",
+      "listId": "2"
+    },
+    {
+      "id": "4",
+      "text": "Update webpack to v2",
+      "listId": "3"
+    },
+    {
+      "id": "5",
+      "text": "Re-write reconciliation code",
+      "listId": "3"
+    },
+    {
+      "id": "6",
+      "text": "Port to new logging service",
+      "listId": "3"
+    }
+  ]
+}
