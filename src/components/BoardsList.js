@@ -5,6 +5,12 @@ import '../styles/boardsList.css';
 class BoardsList extends Component {
   constructor(props) {
     super(props);
+    this.openBoardView = this.openBoardView.bind(this);
+  }
+
+  openBoardView(event, boardId) {
+    event.preventDefault();
+    this.props.onBoardSelect(boardId);
   }
 
   render() {
@@ -20,7 +26,10 @@ class BoardsList extends Component {
         <ul className="boards-list">
           {boardsList.map(board => (
             <li key={board.id} className="boards-list-item">
-              <a href="#" className="board-tile">{board.name}</a>
+              <a href="#" className="board-tile"
+                onClick={(event) => this.openBoardView(event, board.id)}>
+                {board.name}
+              </a>
             </li>
           ))}
           <li className="boards-list-item add-new-board">

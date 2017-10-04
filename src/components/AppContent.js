@@ -9,6 +9,14 @@ class AppContent extends Component {
     this.state = {
       selectedBoardId: null
     };
+    this.handleBoardSelect = this.selectBoardId.bind(this);
+    this.handleBackToBoardsList = this.selectBoardId.bind(this, null);
+  }
+
+  selectBoardId(boardId) {
+    this.setState({
+      selectedBoardId: boardId
+    });
   }
 
   render() {
@@ -18,8 +26,9 @@ class AppContent extends Component {
       <div className="AppContent">
         {
           selectedBoardId ?
-          <BoardView boardId={selectedBoardId} /> :
-          <BoardsList />
+          <BoardView boardId={selectedBoardId}
+            onBackToBoardsList={this.handleBackToBoardsList} /> :
+          <BoardsList onBoardSelect={this.handleBoardSelect} />
         }
       </div>
     );
