@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BoardsList from './BoardsList';
+import BoardsListContainer from '../containers/BoardsListContainer';
 import BoardView from './BoardView';
 
 
@@ -28,7 +28,7 @@ class AppContent extends Component {
           selectedBoardId ?
           <BoardView boardId={selectedBoardId}
             onBackToBoardsList={this.handleBackToBoardsList} /> :
-          <BoardsList onBoardSelect={this.handleBoardSelect} />
+          <BoardsListContainer onBoardSelect={this.handleBoardSelect} />
         }
       </div>
     );

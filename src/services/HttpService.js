@@ -1,7 +1,6 @@
 import * as apiConstants from '../constants/apiConstants';
 
 class HttpService {
-  constructor() {}
 
   static request(options) {
     let { method, url } = options,
