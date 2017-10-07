@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Trello",
+  "name": "Trello Clone",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "trello_favicon.png",
       "sizes": "192x192",
       "type": "image/png"
     }

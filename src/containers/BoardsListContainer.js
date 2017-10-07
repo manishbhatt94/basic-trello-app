@@ -6,7 +6,7 @@ import { getBoards } from '../actions';
 class BoardsListContainer extends Component {
   constructor(props) {
     super(props);
-    this.handleBoardSelect = this.handleBoardSelect.bind(null);
+    this.handleBoardSelect = this.handleBoardSelect.bind(this);
   }
 
   componentDidMount() {

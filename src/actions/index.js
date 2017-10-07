@@ -29,3 +29,28 @@ export const deleteBoard = (boardId) => {
     data: boardId
   };
 };
+
+export const getLists = (boardId) => {
+  return (dispatch) => {
+    TrelloService.getLists(boardId).then(response => {
+      console.log('action::getLists::response', response);
+      dispatch({ type: actionTypes.GET_LISTS, data: response });
+    }).catch(error => {
+      console.log('action::getLists::error', error);
+    });
+  };
+};
+
+export const getCards = (listId) => {
+  return (dispatch) => {
+    TrelloService.getCards(listId).then(response => {
+      console.log('action::getCards::response', response);
+      dispatch({
+        type: actionTypes.GET_CARDS,
+        data: { listId, cards: response }
+      });
+    }).catch(error => {
+      console.log('action::getCards::error', error);
+    });
+  };
+};
