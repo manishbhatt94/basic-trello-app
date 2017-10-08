@@ -41,6 +41,17 @@ export const getLists = (boardId) => {
   };
 };
 
+export const addList = (list) => {
+  return (dispatch) => {
+    TrelloService.addList(list).then(response => {
+      console.log('action::addList::response', response);
+      dispatch({ type: actionTypes.ADD_LIST, data: response });
+    }).catch(error => {
+      console.log('action::addList::error', error);
+    });
+  };
+};
+
 export const getCards = (listId) => {
   return (dispatch) => {
     TrelloService.getCards(listId).then(response => {
@@ -51,6 +62,17 @@ export const getCards = (listId) => {
       });
     }).catch(error => {
       console.log('action::getCards::error', error);
+    });
+  };
+};
+
+export const addCard = (card) => {
+  return (dispatch) => {
+    TrelloService.addCard(card).then(response => {
+      console.log('action::addCard::response', response);
+      dispatch({ type: actionTypes.ADD_CARD, data: response });
+    }).catch(error => {
+      console.log('action::addCard::error', error);
     });
   };
 };

@@ -1,4 +1,4 @@
-.Card {
+.card-read-view .card-readonly {
   display: flex;
   justify-content: space-between;
 }
@@ -10,7 +10,6 @@
 
 .Card span.controls {
   font-size: 12px;
-  display: inline-flex;
   flex-direction: column;
 }
 

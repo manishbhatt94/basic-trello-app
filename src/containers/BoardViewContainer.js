@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BoardView from '../components/BoardView';
-import { getLists } from '../actions';
+import { getLists, addList } from '../actions';
 
 class BoardViewContainer extends Component {
   constructor(props) {
     super(props);
     this.backToBoardsList = this.backToBoardsList.bind(this);
+    this.onAddNewList = this.onAddNewList.bind(this);
   }
 
   componentDidMount() {
     const { dispatch, boardId } = this.props;
     dispatch(getLists(boardId));
+  }
+
+  onAddNewList(newListName) {
+    const { dispatch, boardId } = this.props;
+    const data = { name: newListName, boardId };
+    dispatch(addList(data));
   }
 
   backToBoardsList() {
@@ -22,6 +29,7 @@ class BoardViewContainer extends Component {
     return (
       <BoardView boardName={this.props.boardName}
         onBackToBoardsList={this.backToBoardsList}
+        onAddNewList={this.onAddNewList}
         lists={this.props.lists}
       />
     );

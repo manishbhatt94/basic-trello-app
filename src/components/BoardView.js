@@ -5,7 +5,12 @@ import '../styles/boardView.css';
 class BoardView extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      newListName: ''
+    };
     this.goBack = this.goBack.bind(this);
+    this.onNewListNameChange = this.onNewListNameChange.bind(this);
+    this.addNewList = this.addNewList.bind(this);
   }
 
   goBack(event) {
@@ -13,8 +18,22 @@ class BoardView extends Component {
     this.props.onBackToBoardsList();
   }
 
+  onNewListNameChange(event) {
+    this.setState({
+      newListName: event.target.value
+    });
+  }
+
+  addNewList() {
+    this.props.onAddNewList(this.state.newListName);
+    this.setState({
+      newListName: ''
+    });
+  }
+
   render() {
     const { boardName, lists } = this.props;
+    const { newListName } = this.state;
 
     return (
       <div className="BoardView">
@@ -32,11 +51,14 @@ class BoardView extends Component {
             />
           ))}
           <div className="add-list list">
-            <div className="add-list-box">
+            <div className="add-list-box add-item-block">
               <div className="input-section">
-                <input type="text" className="input-field"
-                  placeholder="Add a list" />
-                <i className="fa fa-check fa-lg" title="Add list"></i>
+                <input type="text" className="input-field" value={newListName}
+                  placeholder="Add a list" onChange={this.onNewListNameChange} />
+                <span className="controls">
+                  <i className="fa fa-check fa-lg" title="Add list"
+                    onClick={this.addNewList}></i>
+                </span>
               </div>
             </div>
           </div>
