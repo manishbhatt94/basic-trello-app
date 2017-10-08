@@ -1,0 +1,86 @@
+.list-box {
+  background-color: #e2e4e6;
+  border-radius: 3px;
+}
+
+.list-box .list-header {
+  padding: 8px 12px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-box ul.list-cards {
+  list-style: none;
+  padding: 0 8px;
+}
+
+.list-box span.controls i {
+  padding: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.list-header .list-name {
+  padding-top: 3px;
+}
+
+.list-header span.controls {
+  font-size: 15px;
+}
+
+.list-header span.controls i {
+  background-color: #fff;
+  color: #4d4d4d;
+  margin-left: 4px;
+}
+
+ul.list-cards li {
+  background-color: #fff;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 15px;
+  margin-bottom: 6px;
+  padding: 5px;
+}
+
+.add-card {
+  margin-top: 10px;
+  padding: 8px;
+  border-top: 1px solid #bbb;
+}
+
+.input-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-section .input-field {
+  width: 100%;
+  margin-right: 6px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.input-section input {
+  padding: 4px;
+}
+
+.input-section textarea {
+  resize: vertical;
+  line-height: 18px;
+  min-height: 22px;
+  max-height: 80px;
+}
+
+.input-section .fa-check {
+  background-color: #32cd32;
+  color: #fff;
+  align-self: flex-start;
+  cursor: pointer;
+  padding: 4px 2px;
+  border-radius: 3px;
+  font-size: 18px;
+}

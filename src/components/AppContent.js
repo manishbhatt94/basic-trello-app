@@ -22,7 +22,9 @@ class AppContent extends Component {
     const { selectedBoardId } = this.state;
 
     return (
-      <div className="AppContent">
+      <div className="AppContent" style={{
+        backgroundColor: selectedBoardId ? '#40a9e6' : '#faf0e6'
+      }}>
         {
           selectedBoardId ?
           <BoardViewContainer boardId={selectedBoardId}

@@ -1,2 +1,36 @@
 .BoardView {
+  padding: 15px 20px;
+}
+
+.BoardView .board-heading {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.BoardView .back-btn {
+  color: inherit;
+  margin-right: 10px;
+}
+
+.BoardView .board-name {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.BoardView .lists-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.BoardView .list {
+  flex: 0 20%;
+  padding: 0 5px 15px;
+}
+
+.add-list-box {
+  background-color: #e2e4e6;
+  border-radius: 3px;
+  padding: 10px 8px;
 }

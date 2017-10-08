@@ -18,16 +18,28 @@ class BoardView extends Component {
 
     return (
       <div className="BoardView">
-        <a href="#" className="back-btn" onClick={this.goBack}>
-          Back to Boards List
-        </a>
-        <p className="board-name">{boardName}</p>
+        <div className="board-heading">
+          <a href="#" className="back-btn" onClick={this.goBack}
+            title="Back to Boards List">
+            <i className="fa fa-arrow-circle-left fa-2x"></i>
+          </a>
+          <p className="board-name">{boardName}</p>
+        </div>
         <div className="lists-section">
           {lists.map(list => (
             <ListContainer key={list.id} listId={list.id}
               listName={list.name}
             />
           ))}
+          <div className="add-list list">
+            <div className="add-list-box">
+              <div className="input-section">
+                <input type="text" className="input-field"
+                  placeholder="Add a list" />
+                <i className="fa fa-check fa-lg" title="Add list"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

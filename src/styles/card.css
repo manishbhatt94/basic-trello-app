@@ -1,0 +1,24 @@
+.Card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Card .card-text {
+  width: 100%;
+  padding-right: 6px;
+}
+
+.Card span.controls {
+  font-size: 12px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.Card span.controls i {
+  background-color: #d6d7d7;
+  color: #818181;
+}
+
+.Card span.controls i + i {
+  margin-top: 4px;
+}
