@@ -70,7 +70,10 @@ export const addCard = (card) => {
   return (dispatch) => {
     TrelloService.addCard(card).then(response => {
       console.log('action::addCard::response', response);
-      dispatch({ type: actionTypes.ADD_CARD, data: response });
+      dispatch({
+        type: actionTypes.ADD_CARD,
+        data: { listId: card.listId, card: response }
+      });
     }).catch(error => {
       console.log('action::addCard::error', error);
     });
