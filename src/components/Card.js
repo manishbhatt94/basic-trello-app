@@ -22,11 +22,14 @@ class Card extends Component {
   }
 
   deleteCard() {
-
+    this.props.onDeleteCard();
   }
 
   saveEditedCard() {
-
+    this.props.onSaveEditedCard(this.state.editedCardText);
+    this.setState({
+      isEditing: false
+    });
   }
 
   cancelEdit() {

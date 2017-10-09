@@ -37,6 +37,18 @@ class TrelloService {
     let options = { method: 'POST', url, body: JSON.stringify(card) };
     return HttpService.request(options);
   }
+
+  static editCard(data) {
+    let url = `cards/${data.cardId}`;
+    let options = { method: 'PATCH', url, body: JSON.stringify(data.payload) };
+    return HttpService.request(options);
+  }
+
+  static deleteCard(cardId) {
+    let url = `cards/${cardId}`;
+    let options = { method: 'DELETE', url };
+    return HttpService.request(options);
+  }
 }
 
 export default TrelloService;

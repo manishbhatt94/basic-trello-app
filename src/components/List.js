@@ -60,7 +60,7 @@ class List extends Component {
   }
 
   render() {
-    const { listName, cards } = this.props;
+    const { listName, listId, cards } = this.props;
     const { isEditing, editedListName, newCardText } = this.state;
 
     return (
@@ -96,7 +96,8 @@ class List extends Component {
           <ul className="list-cards">
             {cards.map(card => (
               <li key={card.id}>
-                <CardContainer cardId={card.id} cardText={card.text} />
+                <CardContainer cardId={card.id} cardText={card.text}
+                  listId={listId} />
               </li>
             ))}
           </ul>

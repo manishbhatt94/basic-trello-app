@@ -79,3 +79,28 @@ export const addCard = (card) => {
     });
   };
 };
+
+export const editCard = (data) => {
+  return (dispatch) => {
+    TrelloService.editCard(data).then(response => {
+      console.log('action::editCard::response', response);
+      dispatch({
+        type: actionTypes.EDIT_CARD,
+        data: { listId: data.listId, card: response }
+      });
+    }).catch(error => {
+      console.log('action::editCard::error', error);
+    });
+  };
+};
+
+export const deleteCard = (data) => {
+  return (dispatch) => {
+    TrelloService.deleteCard(data.cardId).then(response => {
+      console.log('action::deleteCard::response', response);
+      dispatch({ type: actionTypes.DELETE_CARD, data });
+    }).catch(error => {
+      console.log('action::deleteCard::error', error);
+    });
+  };
+};

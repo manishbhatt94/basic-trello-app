@@ -28,6 +28,20 @@ const cardsData = (state = initialState, action) => {
         }
       };
 
+    case actionTypes.EDIT_CARD:
+      let cardIndex = state.listToCardsMap[listId].findIndex(card => 
+        card.id === action.data.card.id);
+      return {
+        listToCardsMap: {
+          ...state.listToCardsMap,
+          [listId]: [
+            ...state.listToCardsMap[listId].slice(0, cardIndex),
+            action.data.card,
+            ...state.listToCardsMap[listId].slice(cardIndex + 1)
+          ]
+        }
+      };
+
     case actionTypes.DELETE_CARD:
       return {
         listToCardsMap: {
