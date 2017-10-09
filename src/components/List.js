@@ -26,11 +26,14 @@ class List extends Component {
   }
 
   deleteList() {
-
+    this.props.onDeleteList();
   }
 
   saveEditedList() {
-
+    this.props.onSaveEditedList(this.state.editedListName);
+    this.setState({
+      isEditing: false
+    });
   }
 
   cancelEdit() {

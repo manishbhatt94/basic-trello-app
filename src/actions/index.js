@@ -52,6 +52,31 @@ export const addList = (list) => {
   };
 };
 
+export const editList = (data) => {
+  return (dispatch) => {
+    TrelloService.editList(data).then(response => {
+      console.log('action::editList::response', response);
+      dispatch({ type: actionTypes.EDIT_LIST, data: response });
+    }).catch(error => {
+      console.log('action::editList::error', error);
+    });
+  };
+};
+
+export const deleteList = (listId) => {
+  return (dispatch) => {
+    TrelloService.deleteList(listId).then(response => {
+      console.log('action::deleteList::response', response);
+      dispatch({
+        type: actionTypes.DELETE_LIST,
+        data: { id: listId }
+      });
+    }).catch(error => {
+      console.log('action::deleteList::error', error);
+    });
+  };
+};
+
 export const getCards = (listId) => {
   return (dispatch) => {
     TrelloService.getCards(listId).then(response => {

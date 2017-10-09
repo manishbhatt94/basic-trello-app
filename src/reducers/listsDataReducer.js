@@ -10,23 +10,30 @@ const listsData = (state = initialState, action) => {
 
     case actionTypes.GET_LISTS:
       return {
-        ...state,
         lists: action.data
       };
 
     case actionTypes.ADD_LIST:
       return {
-        ...state,
         lists: [
           ...state.lists,
           action.data
         ]
       };
 
+    case actionTypes.EDIT_LIST:
+      let listIndex = state.lists.findIndex(list => list.id === action.data.id);
+      return {
+        lists: [
+          ...state.lists.slice(0, listIndex),
+          action.data,
+          ...state.lists.slice(listIndex + 1)
+        ]
+      };
+
     case actionTypes.DELETE_LIST:
       return {
-        ...state,
-        lists: state.lists.filter(list => list.id !== action.data)
+        lists: state.lists.filter(list => list.id !== action.data.id)
       };
 
     default:
