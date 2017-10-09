@@ -14,6 +14,12 @@ class TrelloService {
     return HttpService.request(options);
   }
 
+  static deleteBoard(boardId) {
+    let url = `boards/${boardId}`;
+    let options = { method: 'DELETE', url };
+    return HttpService.request(options);
+  }
+
   static getLists(boardId) {
     let url = `boards/${boardId}/lists`;
     let options = { method: 'GET', url };

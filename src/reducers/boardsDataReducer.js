@@ -10,13 +10,11 @@ const boardsData = (state = initialState, action) => {
 
     case actionTypes.GET_BOARDS:
       return {
-        ...state,
         boards: action.data
       };
 
     case actionTypes.ADD_BOARD:
       return {
-        ...state,
         boards: [
           ...state.boards,
           action.data
@@ -25,8 +23,7 @@ const boardsData = (state = initialState, action) => {
 
     case actionTypes.DELETE_BOARD:
       return {
-        ...state,
-        boards: state.boards.filter(board => board.id !== action.data)
+        boards: state.boards.filter(board => board.id !== action.data.id)
       };
 
     default:

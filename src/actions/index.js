@@ -24,9 +24,16 @@ export const addBoard = (board) => {
 };
 
 export const deleteBoard = (boardId) => {
-  return {
-    type: actionTypes.DELETE_BOARD,
-    data: boardId
+  return (dispatch) => {
+    TrelloService.deleteBoard(boardId).then(response => {
+      console.log('action::deleteBoard::response', response);
+      dispatch({
+        type: actionTypes.DELETE_BOARD,
+        data: { id: boardId }
+      });
+    }).catch(error => {
+      console.log('action::deleteBoard::error', error);
+    });
   };
 };
 

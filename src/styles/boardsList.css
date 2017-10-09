@@ -1,5 +1,10 @@
-.BoardsList .heading {
+.BoardsList {
+  padding: 20px;
+}
 
+.BoardsList .heading {
+  font-size: 25px;
+  padding: 0 10px 20px;
 }
 
 ul.boards-list {
@@ -10,7 +15,22 @@ ul.boards-list {
 
 li.boards-list-item {
   flex: 0 25%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+li.boards-list-item .fa-times {
+  position: absolute;
+  color: #fff;
+  background-color: #e81d1d;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 100%;
+  text-align: center;
+  right: 0px;
+  top: -8px;
+  z-index: 10;
+  cursor: pointer;
 }
 
 a.board-tile {
@@ -38,6 +58,10 @@ a.board-tile:hover {
   color: #838c91;
   font-size: 14px;
   font-weight: 400;
+}
+
+.add-new-board .input-section {
+  margin: 0 8px;
 }
 
 .add-new-board a.board-tile:hover {
